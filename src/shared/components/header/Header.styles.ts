@@ -11,13 +11,21 @@ export const button = css`
   border: 1px solid #dbdbdb;
   border-radius: 36px;
   width: 128px;
+  &:active {
+    background-color: white;
+  }
 `;
 
 export const link = css`
-  font-weight: 600;
   font-size: 20px;
+  text-decoration: none;
   display: block;
   text-align: center;
+`;
+
+export const activeLink = css`
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 export const linkWrapper = css`

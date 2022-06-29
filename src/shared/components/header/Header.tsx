@@ -1,5 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { button, wrapper, link, linkWrapper } from './Header.styles';
+import { NavLink } from 'react-router-dom';
+import {
+  button,
+  wrapper,
+  link,
+  linkWrapper,
+  activeLink,
+} from './Header.styles';
 
 interface Props {
   onLogin: () => void;
@@ -10,9 +17,21 @@ export const Header: React.FC<Props> = ({ onLogin }) => {
     <header css={wrapper}>
       <p>Router Exercise</p>
       <div css={linkWrapper}>
-        <a css={link}>Home</a>
-        <a css={link}>Info</a>
-        <a css={link}>Blog</a>
+        <NavLink to="/" css={link}>
+          {({ isActive }) => (
+            <p css={isActive ? activeLink : undefined}>Home</p>
+          )}
+        </NavLink>
+        <NavLink to="info" css={link}>
+          {({ isActive }) => (
+            <p css={isActive ? activeLink : undefined}>Info</p>
+          )}
+        </NavLink>
+        <NavLink to="blog" css={link}>
+          {({ isActive }) => (
+            <p css={isActive ? activeLink : undefined}>Blog</p>
+          )}
+        </NavLink>
         <button onClick={onLogin} css={button}>
           Change status
         </button>
