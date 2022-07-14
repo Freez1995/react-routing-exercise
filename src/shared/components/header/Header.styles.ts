@@ -11,13 +11,18 @@ export const button = css`
   border: 1px solid #dbdbdb;
   border-radius: 36px;
   width: 128px;
+  &:active {
+    background-color: white;
+  }
 `;
 
 export const link = css`
-  font-weight: 600;
   font-size: 20px;
-  display: block;
-  text-align: center;
+  text-decoration: none;
+`;
+
+export const activeLink = css`
+  font-weight: bold;
 `;
 
 export const linkWrapper = css`
