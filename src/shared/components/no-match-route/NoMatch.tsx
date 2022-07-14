@@ -6,13 +6,13 @@ import { linkStyle } from './NoMatch.styles';
 interface NoMatchProps {
   description?: string;
   path: string;
-  pathName: string;
+  linkText: string;
 }
 
 export const NoMatch: React.FC<NoMatchProps> = ({
   description,
   path,
-  pathName,
+  linkText,
 }) => {
   return (
     <div>
@@ -22,7 +22,7 @@ export const NoMatch: React.FC<NoMatchProps> = ({
           : 'Oops, there is nothing on this Route!'}
       </h1>
       <Link to={`${path}`} css={linkStyle}>
-        {pathName}
+        {linkText}
       </Link>
     </div>
   );

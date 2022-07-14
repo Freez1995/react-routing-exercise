@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
-import { AuthProps } from 'shared/models';
+import { Outlet } from 'react-router-dom';
 
-export const ProtectedRoute: React.FC<AuthProps> = ({ isAuth }) => {
+export const ProtectedRoute: React.FC = () => {
   const waitBeforeShow = 1;
   const [isShown, setIsShown] = useState(false);
 
@@ -13,5 +12,5 @@ export const ProtectedRoute: React.FC<AuthProps> = ({ isAuth }) => {
     return () => clearTimeout(timer);
   }, [waitBeforeShow]);
 
-  return isShown ? isAuth ? <Outlet /> : <Navigate to="/login" /> : null;
+  return isShown ? <Outlet /> : null;
 };

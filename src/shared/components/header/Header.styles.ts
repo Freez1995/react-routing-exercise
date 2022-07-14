@@ -19,13 +19,10 @@ export const button = css`
 export const link = css`
   font-size: 20px;
   text-decoration: none;
-  display: block;
-  text-align: center;
 `;
 
 export const activeLink = css`
   font-weight: bold;
-  text-decoration: none;
 `;
 
 export const linkWrapper = css`
